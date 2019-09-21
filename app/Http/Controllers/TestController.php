@@ -24,6 +24,24 @@ class TestController extends Controller
         $data['details'] = $request->details;
         DB::table('tests')->insert($data);
 
-        return redirect('test/create');
+        return redirect('test');
     }
+
+    public function edit($id)
+    {
+        $data['test'] = DB::table('tests')->where('id', $id)->first();
+        return view('test/edit', $data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data['title'] = $request->title;
+        $data['email'] = $request->email;
+        $data['details'] = $request->details;
+
+        DB::table('tests')->where('id', $id)->update($data);
+
+        return redirect('test');
+    }
+
 }

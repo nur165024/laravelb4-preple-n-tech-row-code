@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>List Of Page</h1>
-    <a href="#">Create Page</a>
+    <a href="<?php echo url('test/create') ?>">Create Page</a>
     <hr>
     <table border>
         <tr>
@@ -17,6 +17,7 @@
             <th>Title</th>
             <th>Email Address</th>
             <th>Details</th>
+            <th>Action</th>
         </tr>
 
         <?php foreach ($tests as $test) { ?>
@@ -25,6 +26,9 @@
                 <td><?php echo $test->title ?></td>
                 <td><?php echo $test->email ?></td>
                 <td><?php echo $test->details ?></td>
+                <td>
+                    <a href="<?php echo url('test/edit', $test->id) ?>">Edit</a>
+                </td>
             </tr>
         <?php } ?>
 

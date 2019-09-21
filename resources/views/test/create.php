@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Create Page</h1>
-    <a href="<?php echo url('test/index'); ?>">List Of Page</a>
+    <a href="<?php echo url('test'); ?>">List Of Page</a>
     <hr>
     <form action="<?php echo url('test/store') ?>" method="post">
 
