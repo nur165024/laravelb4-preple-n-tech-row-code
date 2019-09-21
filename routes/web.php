@@ -28,5 +28,6 @@ Route::delete('test/delete/{id}', 'TestController@delete');
 
 // orm url
 // blog url
+Route::get('blog', 'BlogController@index');
 Route::get('blog/create', 'BlogController@create');
 Route::post('blog/store', 'BlogController@store');
