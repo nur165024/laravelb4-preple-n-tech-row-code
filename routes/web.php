@@ -21,3 +21,4 @@ Route::get('test/create', 'TestController@create');
 Route::post('test/store', 'TestController@store');
 Route::get('test/edit/{id}', 'TestController@edit');
 Route::put('test/update/{id}', 'TestController@update');
+Route::delete('test/delete/{id}', 'TestController@delete');

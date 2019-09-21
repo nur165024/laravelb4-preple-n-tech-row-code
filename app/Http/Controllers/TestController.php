@@ -44,4 +44,10 @@ class TestController extends Controller
         return redirect('test');
     }
 
+    public function delete($id)
+    {
+        DB::table('tests')->delete($id);
+        return redirect('test');
+    }
+
 }

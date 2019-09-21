@@ -27,7 +27,12 @@
                 <td><?php echo $test->email ?></td>
                 <td><?php echo $test->details ?></td>
                 <td>
-                    <a href="<?php echo url('test/edit', $test->id) ?>">Edit</a>
+                    <a href="<?php echo url('test/edit', $test->id) ?>">Edit</a> ||
+                    <form style="display: inline-block" action="<?php echo url('test/delete', $test->id) ?>" method="post">
+                        <?php echo csrf_field() ?>
+                        <input type="hidden" name="_method" value="delete">
+                        <button onclick="confirm('you are sure')">Delete</button>
+                    </form>
                 </td>
             </tr>
         <?php } ?>
