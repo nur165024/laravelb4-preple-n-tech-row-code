@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Blog List</h1>
-    <a href="#">Create Blog</a>
+    <a href="<?php echo url('blog/create') ?>">Create Blog</a>
     <hr>
     <table border>
         <tr>
@@ -25,7 +25,7 @@
                 <td><?php echo $blog->name ?></td>
                 <td><?php echo $blog->details ?></td>
                 <td>
-                    <a href="#">Edit</a>
+                    <a href="<?php echo url('blog/edit', $blog->id) ?>">Edit</a>
                 </td>
             </tr>
         <?php } ?>
@@ -33,3 +33,4 @@
     </table>
 </body>
 </html>
+

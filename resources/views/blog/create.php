@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Blog Create</h1>
-    <a href="#">List Of Page</a>
+    <a href="<?php echo url('blog') ?>">List Of Page</a>
     <hr>
     <form action="<?php echo url('blog/store') ?>" method="post">
 

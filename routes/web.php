@@ -31,3 +31,5 @@ Route::delete('test/delete/{id}', 'TestController@delete');
 Route::get('blog', 'BlogController@index');
 Route::get('blog/create', 'BlogController@create');
 Route::post('blog/store', 'BlogController@store');
+Route::get('blog/edit/{id}', 'BlogController@edit');
+Route::put('blog/update/{id}', 'BlogController@update');

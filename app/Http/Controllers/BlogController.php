@@ -25,4 +25,20 @@ class BlogController extends Controller
         Blog::create($data);
         return redirect('blog/create');
     }
+
+    public function edit($id)
+    {
+        $data['blog'] = Blog::findOrFail($id);
+        return view('blog/edit', $data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data['name'] = $request->name;
+        $data['details'] = $request->details;
+        Blog::findOrFail($id)->update($data);
+
+        return redirect('blog');
+    }
+
 }
