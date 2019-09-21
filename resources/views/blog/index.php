@@ -26,6 +26,14 @@
                 <td><?php echo $blog->details ?></td>
                 <td>
                     <a href="<?php echo url('blog/edit', $blog->id) ?>">Edit</a>
+
+                    <form style="display: inline-block" action="<?php echo url('blog/delete', $blog->id) ?>" method="post">
+
+                        <?php echo csrf_field() ?>
+
+                        <input type="hidden" name="_method" value="delete">
+                        <button onclick="confirm('you are sure')">Delete</button>
+                    </form>
                 </td>
             </tr>
         <?php } ?>

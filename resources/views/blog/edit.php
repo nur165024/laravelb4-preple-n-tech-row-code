@@ -21,7 +21,7 @@
         <textarea name="details" placeholder="Details" rows="5"><?php echo $blog->details ?></textarea>
         <br>
         <br>
-        <button>Save</button>
+        <button>Update</button>
     </form>
 </body>
 </html>

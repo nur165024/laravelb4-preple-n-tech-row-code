@@ -23,7 +23,7 @@ class BlogController extends Controller
         $data['name'] = $request->name;
         $data['details'] = $request->details;
         Blog::create($data);
-        return redirect('blog/create');
+        return redirect('blog');
     }
 
     public function edit($id)
@@ -41,4 +41,9 @@ class BlogController extends Controller
         return redirect('blog');
     }
 
+    public function destroy($id)
+    {
+        Blog::destroy($id);
+        return redirect('blog');
+    }
 }
