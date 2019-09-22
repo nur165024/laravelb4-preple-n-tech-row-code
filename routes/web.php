@@ -34,3 +34,8 @@ Route::post('blog/store', 'BlogController@store');
 Route::get('blog/edit/{id}', 'BlogController@edit');
 Route::put('blog/update/{id}', 'BlogController@update');
 Route::delete('blog/delete/{id}', 'BlogController@destroy');
+
+// product url list
+Route::post('product', 'ProductController@index')->name('product.index');
+Route::get('product/create', 'ProductController@create')->name('product.create');
+Route::post('product', 'ProductController@store')->name('product.store');
