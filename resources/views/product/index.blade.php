@@ -27,7 +27,7 @@
                 <td>{{ $product->product_count }}</td>
                 <td>{{ $product->product_details }}</td>
                 <td>
-                    <a href="#">Edit</a>
+                    <a href="{{ route('product.edit', $product->id) }}">Edit</a>
                 </td>
             </tr>
         @endforeach

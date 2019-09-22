@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index()
     {
         $data['products'] = Product::all();
-        return view('product/index', $data);
+        return view('product.index', $data);
     }
 
     public function create()
@@ -30,5 +30,21 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
+    public function edit($id)
+    {
+        $data['product'] = Product::findOrFail($id);
+        return view('product.edit', $data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data['product_name'] = $request->product_name;
+        $data['product_count'] = $request->product_count;
+        $data['product_details'] = $request->product_details;
+
+        Product::findOrFail($id)->update($data);
+
+        return redirect()->route('product.index');
+    }
 
 }
