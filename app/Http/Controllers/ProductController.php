@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $data['products'] = Product::all();
+        $data['products'] = Product::orderBy('id', 'desc')->get();
         return view('product.index', $data);
     }
 
@@ -44,6 +44,12 @@ class ProductController extends Controller
 
         Product::findOrFail($id)->update($data);
 
+        return redirect()->route('product.index');
+    }
+
+    public function destroy($id)
+    {
+        Product::destroy($id);
         return redirect()->route('product.index');
     }
 

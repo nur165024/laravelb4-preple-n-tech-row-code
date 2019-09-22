@@ -28,6 +28,11 @@
                 <td>{{ $product->product_details }}</td>
                 <td>
                     <a href="{{ route('product.edit', $product->id) }}">Edit</a>
+                    <form style="display: inline-block" action="{{ route('product.destroy', $product->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button onclick="confirm('you are sure')">Delete</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
