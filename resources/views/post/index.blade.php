@@ -24,6 +24,11 @@
                     <td>
                         <a class="btn btn-sm btn-info" href="{{ route('post.edit',$post->id) }}">Edit</a>
                         <a class="btn btn-sm btn-success" href="#">Show</a>
+                        <form class="d-inline" action="{{ route('post.destroy', $post->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button onclick="confirm('you are sure')" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
