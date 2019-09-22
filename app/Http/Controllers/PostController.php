@@ -31,7 +31,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $data['post'] = Post::findOrFail($id);
-        return view('post/edit', $data);
+        return view('post.edit', $data);
     }
 
     public function update(Request $request, $id)
@@ -50,9 +50,10 @@ class PostController extends Controller
         return redirect()->route('post.index');
     }
 
-    public function show()
+    public function show($id)
     {
-
+        $data['post'] = Post::findOrFail($id);
+        return view('post.show', $data);
     }
 
 }

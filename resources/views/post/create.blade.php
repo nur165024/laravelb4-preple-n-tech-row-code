@@ -9,15 +9,7 @@
 
         @csrf
 
-        <div class="form-group">
-            <label">Enter Your Title</label>
-            <input name="title" type="text" class="form-control" placeholder="Enter Your Title">
-        </div>
-
-        <div class="form-group">
-            <label">Enter Your Title</label>
-            <textarea name="details" class="form-control" placeholder="Details" rows="6"></textarea>
-        </div>
+        @include('post/_form')
 
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
