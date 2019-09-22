@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index()
     {
         $data['products'] = Product::all();
-        return view('product/index');
+        return view('product/index', $data);
     }
 
     public function create()
@@ -27,7 +27,7 @@ class ProductController extends Controller
 
         Product::create($data);
 
-        return redirect()->route('product.create');
+        return redirect()->route('product.index');
     }
 
 

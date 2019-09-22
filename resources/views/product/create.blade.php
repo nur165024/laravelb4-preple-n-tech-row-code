@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Product Create</h1>
-    <a href="#">Product List</a>
+    <a href="{{ route('product.index') }}">Product List</a>
     <hr>
     <form action="{{ route('product.store') }}" method="post">
 
